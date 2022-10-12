@@ -77,8 +77,7 @@ function getWeatherbycity() {
   };
 }
 
-const button = document.querySelector("#go");
-button.onclick = function (e) {
+function weatherseek() {
   let cityinput = document.getElementById("city");
   cityname = cityinput.value;
   openweather_go = openweather_basic + "&q=" + cityname;
@@ -87,18 +86,6 @@ button.onclick = function (e) {
   tempunit = tempinput.value;
   openweather_go += "&units=" + tempunit;
   getWeatherbycity();
-};
-
-const unitsselect = document.getElementById("tempunit");
-unitsselect.onchange = function (e) {
-  let cityinput = document.getElementById("city");
-  cityname = cityinput.value;
-  openweather_go = openweather_basic + "&q=" + cityname;
-
-  let tempinput = document.getElementById("tempunit");
-  tempunit = tempinput.value;
-  openweather_go += "&units=" + tempunit;
-  getWeatherbycity();
-};
+}
 
 getWeatherfind();
